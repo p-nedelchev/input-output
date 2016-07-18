@@ -10,6 +10,7 @@ out/
 *.jar
 *.war
 *.ear
+*.xml
 
 # User-specific stuff:
 .idea/workspace.xml
