@@ -12,7 +12,7 @@ public class TransferObject {
     private byte [] buffer = null;
 
     public TransferObject() {
-        buffer = new byte[1000];
+        buffer = new byte[1024];
     }
 
     /**
@@ -45,9 +45,8 @@ public class TransferObject {
                 read = in.read(buffer);
                 if (read < size) {
                     out.write(buffer, offset, read - offset);
-                } else {
-                    out.write(buffer, offset, size);
                 }
+                out.write(buffer, offset, size);
             } catch (IOException e) {
                 e.printStackTrace();
             }
