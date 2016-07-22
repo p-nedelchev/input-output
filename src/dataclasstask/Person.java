@@ -7,13 +7,10 @@ import java.io.Serializable;
  */
 public class Person implements Serializable {
 
-    private String name;
-    private int age;
-    private String address;
-    private int idNumber;
-
-    public Person() {
-    }
+    private final String name;
+    private final int age;
+    private final String address;
+    private final int idNumber;
 
     public Person(String name, int age, String address, int idNumber) {
         this.name = name;
@@ -21,6 +18,8 @@ public class Person implements Serializable {
         this.address = address;
         this.idNumber = idNumber;
     }
+
+
 
     public String getName() {
         return name;

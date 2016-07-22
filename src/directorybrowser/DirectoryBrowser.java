@@ -24,16 +24,18 @@ public class DirectoryBrowser {
     public ArrayList<String> listContent (String path) {
         ArrayList<String> list = new ArrayList<>();
         Path source = Paths.get(path);
+        if (Files.isRegularFile(source)) {
+            System.out.println("Path points to a file");
+            return list;
+        }
         if (Files.isDirectory(source)) {
             try (DirectoryStream<Path> browser = Files.newDirectoryStream(source)) {
                 for (Path path1 : browser) {
-                    list.add( path1.getFileName().toString() );
+                    list.add(path1.getFileName().toString());
                 }
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        } else if (Files.isRegularFile(source)) {
-            System.out.println("Path points to a file");
         }
         return list;
     }
