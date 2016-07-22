@@ -36,6 +36,8 @@ public class TransferObject {
      * @param out OutputStream output destination
      * @param offset int starting point
      * @param size int length of transferred bytes
+     * If size is greater than input stream length only bytes
+     * from offset to the end of input stream are transferred
      */
     public void transfer (InputStream in, OutputStream out, int offset, int size) {
             try {
